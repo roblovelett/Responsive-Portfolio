@@ -1,6 +1,4 @@
 html {
-  height: 100%;
-  width: 100%;
   box-sizing: border-box;
 }
 
@@ -9,44 +7,39 @@ html {
 *::after {
   box-sizing: inherit;
 }
-
 body {
-  min-height: 100%;
-  display: flex;
+    display: flex;
+  min-height: 100vh;
   flex-direction: column;
   background-color: #fff;
   font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
   color: #777;
 }
-
-.content {
-  background: #ffffff url("../images/bg.png") repeat;
+main {
   flex: 1;
+  background: url("../images/bg.png") repeat;
   padding: 40px 0;
 }
-
 .container {
   margin-right: auto;
   margin-left: auto;
   width: 960px;
-  padding-left: 20px;
-  padding-right: 20px;
+  /*padding-left: 20px;
+  padding-right: 20px;*/
 }
-
-.row {
+/*.row {
   margin-left: -20px;
   margin-right: -20px;
 }
-
 .row::before,
 .row::after {
   content: ' ';
   display: table;
 }
-
 .row::after {
   clear: both;
-}
+}*/
+
 
 /* Base Typo
  ------------------------------------------------- */
@@ -111,6 +104,7 @@ a:hover {
   border-bottom: solid #c9c9c9 2px;
   color: #fff;
   background: #fff;
+  flex: none;
 }
 
 /* Header */
@@ -166,21 +160,25 @@ a:hover {
   margin: 0 20px 20px 0;
 }
 .portfolio {
-  width: 180px;
+  width: 50%;
   height: 140px;
-  margin: 0 20px 40px;
   float: left;
   text-align: center;
+  padding: 5px;
+}
+.portfolio img {
+  width: auto;
+  max-height: 140px;
 }
 .portfolio-text {
-  background: #4aaaa5;;
+  background: #4aaaa5;
   color: #fff;
   font-weight: 600;
   font-family: 'Georgia', Times, Times New Roman, serif;
   font-size: 1.3em;
   padding: 15px 0;
   position: relative;
-  bottom: 55px;
+  /* bottom: 55px; */
   width: 100%;
 }
 .portfolio a:hover {
@@ -231,6 +229,7 @@ a:hover {
   background: #666;
   color: #ccc;
   font-size: small;
+  flex: none;
 }
 
 .u-full-width {
@@ -255,7 +254,7 @@ At the bottom of `styles.css` you will write your media queries.
   .container { width: 730px; }
   .main { width: 420px; }
   .sidebar { width: 270px; }
-  .profile { width: 100%; display: block; margin-bottom: 30px; }
+  .profile { width: 100%; display: block; margin: 0 0 30px; }
 }
 
 @media only screen and (max-width: 768px) {
