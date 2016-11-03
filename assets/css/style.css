@@ -8,7 +8,7 @@ html {
   box-sizing: inherit;
 }
 body {
-    display: flex;
+  display: flex;
   min-height: 100vh;
   flex-direction: column;
   background-color: #fff;
@@ -24,23 +24,7 @@ main {
   margin-right: auto;
   margin-left: auto;
   width: 960px;
-  /*padding-left: 20px;
-  padding-right: 20px;*/
 }
-/*.row {
-  margin-left: -20px;
-  margin-right: -20px;
-}
-.row::before,
-.row::after {
-  content: ' ';
-  display: table;
-}
-.row::after {
-  clear: both;
-}*/
-
-
 /* Base Typo
  ------------------------------------------------- */
 
@@ -160,29 +144,48 @@ a:hover {
   margin: 0 20px 20px 0;
 }
 .portfolio {
-  width: 50%;
-  height: 140px;
+  width: 40%;
+  height: 165px;
   float: left;
   text-align: center;
-  padding: 5px;
+  margin: 0 5% 35px 5%;
+  white-space: nowrap;
 }
-.portfolio img {
-  width: auto;
-  max-height: 140px;
+.portfolio-img {
+  vertical-align: middle;
+  max-height: 165px;
+  max-width: 100%;
 }
-.portfolio-text {
+.portfolio-title {
   background: #4aaaa5;
   color: #fff;
   font-weight: 600;
   font-family: 'Georgia', Times, Times New Roman, serif;
-  font-size: 1.3em;
+  font-size: .9em;
   padding: 15px 0;
   position: relative;
-  /* bottom: 55px; */
-  width: 100%;
+  bottom: 55px;
 }
 .portfolio a:hover {
   text-decoration: none;
+}
+.portfolio:before,
+.portfolio_before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+/* Move this to conditional comments */
+.portfolio {
+    list-style:none;
+    behavior: expression(
+        function(t){
+            t.insertAdjacentHTML('afterBegin','<span class="portfolio_before"></span>');
+            t.runtimeStyle.behavior = 'none';
+        }(this)
+    );
 }
 .contact span {
   font-size: 1.2em;
@@ -231,11 +234,9 @@ a:hover {
   font-size: small;
   flex: none;
 }
-
 .u-full-width {
   width: 100%;
 }
-
 .u-cf {
   clear: both;
 }
@@ -255,11 +256,19 @@ At the bottom of `styles.css` you will write your media queries.
   .main { width: 420px; }
   .sidebar { width: 270px; }
   .profile { width: 100%; display: block; margin: 0 0 30px; }
+  .main hr { margin-bottom: 40px; }
+  .portfolio { width: 100%; height: 270px; margin: 0 0 35px 0;}
+  .portfolio-img { max-height: 270px; }
+  .portfolio-title { font-size: 1.2em; padding: 20px 0; bottom: 70px; }
+  .portfolio:after { clear: both; }
 }
 
 @media only screen and (max-width: 768px) {
   .main { float: none; width: 100%; margin-bottom: 40px;}
   .sidebar { float: none; width: 100%; }
+  .portfolio { background: red; width: 40%; height: 235px; float: left; margin: 0 5% 40px 5%; }
+  .portfolio-img { max-height: 235px; }
+  .portfolio-title { font-size: 1.2em; padding: 20px 0; bottom: 85px; }
   .connect { width: 11.111%; }
 }
 
