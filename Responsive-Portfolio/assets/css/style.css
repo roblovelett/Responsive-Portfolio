@@ -1,0 +1,397 @@
+html {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 0.688em;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+  color: #777;
+}
+
+.content {
+  background: #ffffff url("../images/bg.png") repeat;
+  padding: 25px 0;
+  flex: 1;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: 960px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.row {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.row::before,
+.row::after {
+  content: ' ';
+  display: table;
+}
+
+.row::after {
+  clear: both;
+}
+
+[class*='column'] {
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+[class*='column'] ~ [class*='column'] {
+  margin-top: 0;
+}
+.one[class*='column'] {
+  width: 8.3333333333%;
+}
+.two[class*='column'] {
+  width: 16.6666666666%;
+}
+.three[class*='column'],
+.one-quarter[class*='column'] {
+  width: 24.9999999999%;
+}
+.four[class*='column'],
+.one-third[class*='column'] {
+  width: 33.3333333332%;
+}
+.five[class*='column'] {
+  width: 41.6666666665%;
+}
+.six[class*='column'],
+.one-half[class*='column'] {
+  width: 49.9999999998%;
+}
+.seven[class*='column'] {
+  width: 58.3333333331%;
+}
+.eight[class*='column'],
+.two-thirds[class*='column'] {
+  width: 66.6666666664%;
+}
+.nine[class*='column'] {
+  width: 74.9999999997%;
+}
+.ten[class*='column'] {
+  width: 83.333333333%;
+}
+.eleven[class*='column'] {
+  width: 91.6666666663%;
+}
+.twelve[class*='column'] {
+  width: 99.9999999996%;
+}
+
+/* Base Typo
+ ------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #4aaaa5;
+  font-weight: 600;
+  font-family: 'Georgia', Times, Times New Roman, serif;
+}
+
+h1 {
+  font-size: 1.7em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.3em;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 1.0em;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 0.8em;
+  margin-bottom: 5px;
+}
+
+small, .font_small {font-size: 0.707em;}
+
+p { 
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+/* Links */
+
+a {
+  color:#9d9d9d;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.u-full-width {
+  width: 100%;
+}
+
+.u-max-full-width {
+  max-width: 100%;
+}
+
+/* Floats */
+
+.u-pull-right {
+  float: right;
+}
+
+.u-pull-left {
+  float: left;
+}
+
+.u-cf {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Positioning */
+
+.u-center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**
+ * Note:
+ *
+ * Nest this class inside something with `position: relative` to have
+ * your element centered relative to its containing element.
+ *
+ * Use this class without nesting it to have your element centered relative
+ * to the viewport.
+ */
+
+.u-center-abs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+}
+
+/* Type */
+
+.u-text-center {
+  text-align: center !important;
+}
+
+.u-text-right {
+  text-align: right !important;
+}
+
+.u-text-left {
+  text-align: left !important;
+}
+
+.u-text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+/* Peek a boo */
+
+.u-hide {
+  display: none !important;
+}
+
+.u-show {
+  display: block !important;
+}
+
+.u-invisible {
+  visibility: hidden !important;
+}
+
+.u-visible {
+  visibility: visible !important;
+}
+
+/* Misc */
+
+.u-img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Clearing */
+
+.container:after,
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Header */
+.header, .header-name, .header-nav {
+  min-height: 55px;
+}
+.header {
+  border-bottom: solid #c9c9c9 2px;
+  color: #fff;
+  background: #fff;
+}
+
+/* Header */
+.header-name {
+  background: #4aaaa5;
+  padding: 20px;
+  color: #fff;
+  font-family: 'Georgia', Times, Times New Roman, serif;
+  font-weight: 600;
+  font-size: 1.7em;
+}
+.header-nav {
+  min-width: 270px;
+  padding: 20px 0 25px;
+}
+.header-nav li {
+  display: inline;
+  border: 1px solid #f1f1f1;
+  border-top: none;
+  border-bottom: none;
+}
+.header-nav li:first-child {
+  border: none;
+  padding-right: 14px;
+}
+.header-nav li:nth-child(2) {
+  padding: 0 14px;
+}
+.header-nav li:last-child {
+  border: none;
+  padding-left: 14px;
+}
+
+.main {
+  width: 650px;
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  padding: 25px 20px;
+}
+.main hr {
+  content:' ';
+  display:block;
+  border: 1px #c9c9c9 solid;
+  margin-bottom: 20px;
+}
+.profile {
+  max-width: 125px;
+  max-height: 90px;
+  margin: 6px 18px 15px 0;
+}
+
+.portfolio {
+  width: 180px;
+  height: 140px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.portfolio img {
+  max-width: 180px;
+  max-height: 140px;
+}
+
+.portfolio-text {
+  background: #4aaaa5;;
+  color: #fff;
+  font-weight: 600;
+  font-family: 'Georgia', Times, Times New Roman, serif;
+  font-size: 1.3em;
+  padding: 15px 0;
+  position: relative;
+  bottom: 55px;
+  width: 100%;
+}
+.portfolio a:hover {
+  text-decoration: none;
+}
+.contact span {
+  font-size: 1.2em;
+}
+.contact input {
+  margin-bottom: 15px;
+  width: 100%;
+}
+.contact textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.btn {
+  font-weight: 600;
+  font-family: 'Georgia', Times, Times New Roman, serif;
+  color: #fff;
+  background: #4aaaa5;
+  padding: 10px 20px 10px 20px;
+  font-size: 1em;
+  border: 0;
+}
+/* Sidebar */
+.sidebar {
+  padding: 25px 20px;
+  width: 270px;
+  background:#fff;
+  border: 1px solid #e9e9e9;
+}
+.connect {
+  width: 230px;
+}
+.connect li {
+  display: inline;
+  max-width: 33%;
+}
+.connect img {
+  max-width: 40px;
+}
+.connect li:nth-child(2) {
+  padding: 0 8px 0;
+}
+
+/* Footer */
+.footer {
+  height: 60px;
+  border-top: 6px solid #4aaaa5;
+  padding: 25px;
+  text-align: center;
+  background: #666;
+  color: #ccc;
+}
